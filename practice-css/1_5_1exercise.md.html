@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html><head>
+<title>1_5_1exercise.md</title>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="1_5_1exercise.md_files/mermaid.min.js"></script>
+</head>
+<body><header><p>情報メディア実験「Web コンテンツ作成」　第1回「WWW と HTML」</p><h1 id="%E6%BC%94%E7%BF%921-4-html%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E8%A6%81%E7%B4%A0">演習1-4: HTMLのさまざまな要素</h1><p class="mdn"></p></header><div id="main-content"><main>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<link href="1_5_1exercise.md_files/default.css" rel="stylesheet">
+<script src="1_5_1exercise.md_files/navall.js" defer="defer"></script>
+<script src="1_5_1exercise.md_files/nav.js" defer="defer"></script>
+<script src="1_5_1exercise.md_files/default.js" defer="defer"></script>
+
+<p>参考資料「<a href="https://www.nishita-lab.org/web-contents/text/1html/1_6text-element.html">HTMLテキストの要素</a>」，「<a href="https://www.nishita-lab.org/web-contents/text/1html/1_7hyperlink.html">ハイパーリンク</a>」，「<a href="https://www.nishita-lab.org/web-contents/text/1html/1_11image.html">画像の埋め込み</a>」，「<a href="https://www.nishita-lab.org/web-contents/text/1html/1_9additional.html">その他の要素の紹介</a>」を参考にして次の演習に取り組んでください．</p>
+<ol>
+<li><code>practice-html/elements.html</code> を Visual Studio Code で開きます</li>
+<li>「見出し」で始まる行は1番大きな見出しの要素にしてください．</li>
+<li>「小見出し」で始まる行は2番目に大きな見出しの要素にしてください．</li>
+<li>拓殖大学の5学部を番号なしのリスト要素にしてください．</li>
+<li>カレーの作り方を番号付きのリスト要素にしてください．</li>
+<li>「演習1-3のHTMLファイル」と「index.html」をハイパーリンクにしてください．
+<ul>
+<li>ともに href 属性には相対URLを指定すること</li>
+</ul>
+</li>
+<li>宇宙望遠鏡は説明リスト要素にしてください．</li>
+<li>「(JSWTの画像)」を img 要素にしてください．
+<ul>
+<li>画像ファイルは practice-html フォルダに存在する JWST...png です．（ファイル名は自分で確認すること）</li>
+</ul>
+</li>
+</ol>
+<p>（完成イメージ）</p>
+<p><img src="1_5_1exercise.md_files/exercise1-4goal.png" alt="演習1-4完成イメージ" class="lg"></p>
+<p>（注意事項）</p>
+<ul>
+<li>完成した HTML ファイルを Firefox で開くこと</li>
+<li>ハイパーリンクをクリックすると演習1-3で作成したページ，index.html が表示されることを確認すること</li>
+</ul>
+
+
+
+</main><nav><div class="nav-content navhead"><p>このページの見出し</p><ul></ul></div><div class="nav-content navfile"><p>第1回「WWW と HTML」: ページ一覧</p><ul><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_0prelim_check.html">事前課題の確認</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_0_1download_files.html">演習ファイルのダウンロード</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_1intro.html">イントロダクション: Webページと WWW</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_2www.html">イントロダクション: WWW とその技術要素</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_3theme.html">テーマ「Webコンテンツ作成」について</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_4html-intro.html">講義資料（1/5）: HTML文書</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_5html-structure.html">講義資料（2/5）: HTML文書の構成</a></li><li class="current"><a href="https://www.nishita-lab.org/web-contents/text/1html/1_5_1exercise.html">講義資料（3/5）: 演習1-4</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_12html-reference.html">講義資料（4/5）: HTML要素リファレンス</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_8debug-html.html">講義資料（5/5）: HTMLのデバッグ</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_10task.html">課題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_6text-element.html">参考資料: HTMLテキストの要素</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_7hyperlink.html">参考資料: ハイパーリンク</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_11image.html">参考資料: 画像の埋め込み</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_9additional.html">参考資料: その他の要素の紹介</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_14project-data.html">参考資料: プロジェクト課題のデータについて</a></li></ul></div><div class="nav-content navtext"><p>「Webコンテンツ作成」の資料一覧</p><ul><li><a href="https://www.nishita-lab.org/web-contents/text/0intro/0_1theme.html">第1回事前課題</a></li><li class="current"><a href="https://www.nishita-lab.org/web-contents/text/1html/1_0prelim_check.html">第1回講義: WWWとHTML</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1homework/1h_homework.html">第1回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_1css-intro.html">第2回講義: CSSによるWebページの装飾</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2homework/2h_homework.html">第2回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/3javascript/3_1js-intro.html">第3回講義: JavaScriptの基本</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/3homework/3h_homework.html">第3回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/4dom/4_1dom-intro.html">第4回講義: DOMとJavaScript</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/4homework/4h_homework.html">第4回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/5event/5_1event-intro.html">第5回講義: イベント処理</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/5homework/5h_homework.html">第5回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/6project/6_1project.html">第6回 プロジェクト課題を完成させよう</a></li></ul></div></nav></div><footer><a href="https://www.nishita-lab.org/web-contents/text/1html/1_5html-structure.html">前ページ「講義資料（2/5）: HTML文書の構成」 &lt;</a>　｜　<a href="https://www.nishita-lab.org/web-contents/text/1html/1_12html-reference.html">&gt; 次ページ「講義資料（4/5）: HTML要素リファレンス」</a></footer></body></html>
