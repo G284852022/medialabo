@@ -2,3 +2,7 @@ h1 {
     color: aqua;
     font-style: italic;
 }
+
+h2 {
+    border-bottom-style: solid;
+}
