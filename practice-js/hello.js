@@ -1,8 +1,8 @@
 console.log('こんにちは');
-console.log(x);
-x=3
+let x;
+x=3;
 3
-x=x+1
+x=x+1;
 4
 
-x
+console.log(x);
