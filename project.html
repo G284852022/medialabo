@@ -2,9 +2,11 @@
   </html>
   <html>
   <head>
-    <title>世界の天気（検索結果1件）</title>
-    <script src="https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json"></script>
+    <title>Ajax通信のデモ</title>
     <script src="weather.js" defer></script>
+    <script src="https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
 
   <body>
@@ -13,70 +15,74 @@
     </h2>
     <div>
       <h2 class="radiocss">どこの天気が気になる？</h2>
+      <p><label for="kensakumado">都市を選択してください</label></p>
       <p>
+        
         <input type="radio" name="where" id="360630">
         <label for="Cairo">カイロ</label>
         <input type="radio" name="where" id="524901">
         <label for="Moscow">モスクワ</label>
         <input type="radio" name="where" id="993800">
-        <label for="Johannesburg">ヨハネスブルk</label>
+        <label for="Johannesburg">ヨハネスブルク</label>
         <input type="radio" name="where" id="1816670">
         <label for="Beijing">北京</label>
         <input type="radio" name="where" id="1850147">
-        <label for="Cairo">東京</label>
+        <label for="Tokyo">東京</label>
         <input type="radio" name="where" id="1880252">
-        <label for="Moscow">シンガポール</label>
-      </p>
-      <p>
+        <label for="Singapore">シンガポール</label>
         <input type="radio" name="where" id="2147714">
-        <label for="Johannesburg">シドニー</label>
+        <label for="Sydney">シドニー</label>
         <input type="radio" name="where" id="2643743">
-        <label for="Beijing">ロンドン</label>
+        <label for="London">ロンドン</label>
         <input type="radio" name="where" id="2968815">
-        <label for="Cairo">パリ</label>
+        <label for="Paris">パリ</label>
         <input type="radio" name="where" id="3451189">
-        <label for="Moscow">リオデジャネイロ</label>
+        <label for="Rio de Janeiro">リオデジャネイロ</label>
         <input type="radio" name="where" id="5128581">
-        <label for="Johannesburg">ニューヨーク</label>
+        <label for=" New York">ニューヨーク</label>
         <input type="radio" name="where" id="5368361">
-        <label for="Beijing">ロサンゼルス</label>
+        <label for=" Los Angeles ">ロサンゼルス</label>
        </p>
-       <label for="kensakumado">気になる場所を選んで検索しましょう</label>
-       <button id="sendRequest">調べる</button>
+       
+       <button id="searchBotton">調べる</button>
     </div>
     <div id="result"></div>
     <table>
       <tr>
         <th>項目</th>
-        <th>内容</th>
+        <th>項目の説明</th>
       </tr>
       <tr>
         <td>緯度:</td>
-        <td id="d1"> 116.3972</td>
+        <td id="d1"> </td>
       </tr>
       <tr>
         <td>経度:</td>
-        <td id="d2"> 39.9075</td>
+        <td id="d2"></td>
       </tr>
       <tr>
         <td>天気:</td>
-        <td id="d3"> 曇りがち</td>
+        <td id="d3"> </td>
+      </tr>
+      <tr>
+        <td>最高気温:</td>
+        <td id="d8"> </td>
       </tr>
       <tr>
         <td>最低気温:</td>
-        <td id="d4"> 9.94</td>
+        <td id="d4"> </td>
       </tr>
       <tr>
         <td>風速:</td>
-        <td id="d5"> 2.65</td>
+        <td id="d5"> </td>
       </tr>
       <tr>
         <td>風向き:</td>
-        <td id="d6"> 197</td>
+        <td id="d6"> </td>
       </tr>
       <tr>
         <td>都市名:</td>
-        <td id="d7"> 北京</td>
+        <td id="d7"> </td>
       </tr>
     </table>
   </body>

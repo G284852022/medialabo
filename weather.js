@@ -45,42 +45,67 @@
   "cod": 200
 };*/
 
-let b = document.querySelector('#sendRequest');
-b.addEventListener('click', sendRequest);
+let a = document.querySelector('#searchBotton');
+a.addEventListener('click', search);
 
+function search() {
+  let r = document.querySelectorAll('input[name="where"]');
+  let SearchId;
 
-// 通信を開始する処理
-function sendRequest() {
-    // URL を設定
-    let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json';
-
-    // 通信開始
-   axios.get(url).then(showResult).catch(showError).then(finish);
-}
-
-// 通信が成功した時の処理
-function showResult(resp) {
-    // サーバから送られてきたデータを出力
-    let data = resp.data;
-
-    // data が文字列型なら，オブジェクトに変換する
-    if (typeof data === 'string') {
-        data = JSON.parse(data);
+  for(let i = 0;i<r.length;i++){
+    if(r[i].checked){
+      SearchId = r[i].id;
+      let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/'+SearchId+'.json'
+      console.log('選択されているボックスID:', SearchId);
+      console.log('URL:', url);
+      break;
+      
     }
+  }
 
-    // data をコンソールに出力
-    console.log(data);
-
-    // data.x を出力
-    console.log(data.x);
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/'+SearchId+'.json'
+  axios.get(url)
+  .then(showResult)
+  .catch(showError)
+  .then(finish);
 }
 
-// 通信エラーが発生した時の処理
-function showError(err) {
-    console.log(err);
+let data;
+
+function showResult(resp) {
+  data = resp.data;
+
+  
+
+  let s1=document.querySelector('td#d1');
+  s1.textContent=data.coord.lon;
+  let s2=document.querySelector('td#d2');
+  s2.textContent=data.coord.lat;
+  let s3=document.querySelector('td#d3');
+  s3.textContent=data.weather[0].description;
+  let s8=document.querySelector('td#d8');
+  s8.textContent=data.main.temp_max;
+  let s4=document.querySelector('td#d4');
+  s4.textContent=data.main.temp_min;
+  let s5=document.querySelector('td#d5');
+  s5.textContent=data.wind.speed;
+  let s6=document.querySelector('td#d6');
+  s6.textContent=data.wind.deg;
+  let s7=document.querySelector('td#d7');
+  s7.textContent=data.name;
+
+  if(typeof data === 'string'){
+    data = JSON.parse(data);
+  }
+
+  console.log(data);
 }
 
-// 通信の最後にいつも実行する処理
+  function showError(error) {
+    console.log('Error fetching weather data:');
+}
+
 function finish() {
-    console.log('Ajax 通信が終わりました');
+  console.log('Ajax 通信が終わりました');
 }
+
