@@ -1,10 +1,12 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>project.html</title>
 
+  </html>
+  <html>
+  <head>
+    <title>世界の天気（検索結果1件）</title>
+    <script src="https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json"></script>
     <script src="weather.js" defer></script>
   </head>
+
   <body>
     <h2>
       世界の天気（検索結果1件）
@@ -40,7 +42,7 @@
         <label for="Beijing">ロサンゼルス</label>
        </p>
        <label for="kensakumado">気になる場所を選んで検索しましょう</label>
-       <button id="serchBotton">調べる</button>
+       <button id="sendRequest">調べる</button>
     </div>
     <div id="result"></div>
     <table>
@@ -77,20 +79,5 @@
         <td id="d7"> 北京</td>
       </tr>
     </table>
-
-  
-  </body>
-  </html>
-  <html>
-  <head>
-    <title>Ajax通信のデモ</title>
-    <script src="https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json"></script>
-    <script src="weather.js" defer></script>
-  </head>
-
-  <body>
-    <h1>Ajax通信のデモ</h1>
-    <p>以下のボタンを押すと，サーバに通信します．結果はコンソールに出力します．</p>
-    <button id="sendRequest">通信</button>
   </body>
 </html>

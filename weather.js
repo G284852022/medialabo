@@ -1,4 +1,4 @@
-let data = {
+/*let data = {
   "coord": {
     "lon": 116.3972,
     "lat": 39.9075
@@ -43,9 +43,8 @@ let data = {
   "id": 1816670,
   "name": "北京市",
   "cod": 200
-};
+};*/
 
-////////// 課題3-2 ここからプログラムを書こう
 let b = document.querySelector('#sendRequest');
 b.addEventListener('click', sendRequest);
 
@@ -56,10 +55,7 @@ function sendRequest() {
     let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json';
 
     // 通信開始
-    axios.get(url)
-        .then(showResult)   // 通信成功
-        .catch(showError)   // 通信失敗
-        .then(finish);      // 通信の最後の処理
+   axios.get(url).then(showResult).catch(showError).then(finish);
 }
 
 // 通信が成功した時の処理
