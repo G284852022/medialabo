@@ -4,7 +4,7 @@
     "lat": 39.9075
   },
   "weather": [
-    {
+    { 
       "id": 803,
       "main": "Clouds",
       "description": "曇りがち",
