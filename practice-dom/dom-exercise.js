@@ -14,17 +14,36 @@ let data = [
 //// 注意: 以上は編集しないこと!
 
 // 練習4-2 メッセージ追加プログラム
-h2 = document.querySelector('h2#ex42');
-
+let h2 = document.querySelector('h2#ex42');
 let p = document.createElement('p');
-p.textContent = '写真表と都市の緯度軽度のページです';
-h2.insertAdjacentElement('afterend', p);
+p.textContent = '写真表と年の緯度経度のページです';
+p.styl.color='blue';
+h2.insertAdjacentElement('afterend',p);
+
 
 // 練習4-3 写真表作成プログラム
+let img1 = document.createElement('img');
+img1.setAttribute('src','taro.png');
+let img2 = document.createElement('img');
+img2.setAttribute('src','jiro.png');
+let img3 = document.createElement('img');
+img3.setAttribute('src','hanako.png');
+
+let taro = document.createElement('p');
+let jiro = document.createElement('p');
+let hanako = document.createElement('p');
+
+taro.insertAdjacentElement('beforeend','img1');
+jiro.insertAdjacentElement('beforeend','img2');
+hanako.insertAdjacentElement('beforeend','img3');
+
+let p2 = document.querySelector('div#phototable');
+p2.insertAdjacentElement('beforeend', 'taro');
+p2.insertAdjacentElement('beforeend', 'jiro');
+p2.insertAdjacentElement('beforeend', 'hanako');
 
 
 // 練習4-4 箇条書き削除プログラム
 
 
 // 練習4-5 箇条書き追加プログラム
-
