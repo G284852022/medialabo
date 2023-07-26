@@ -58,4 +58,4 @@ if(kaisu<3){
 
 }
 kaisuSpan.textContent = kaisu;
-  }
+  } 
