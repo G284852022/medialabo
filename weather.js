@@ -77,22 +77,22 @@ function showResult(resp) {
 
   
 
-  let s1=document.querySelector('td#d1');
-  s1.textContent=data.coord.lon;
-  let s2=document.querySelector('td#d2');
-  s2.textContent=data.coord.lat;
-  let s3=document.querySelector('td#d3');
-  s3.textContent=data.weather[0].description;
-  let s8=document.querySelector('td#d8');
-  s8.textContent=data.main.temp_max;
-  let s4=document.querySelector('td#d4');
-  s4.textContent=data.main.temp_min;
-  let s5=document.querySelector('td#d5');
-  s5.textContent=data.wind.speed;
-  let s6=document.querySelector('td#d6');
-  s6.textContent=data.wind.deg;
-  let s7=document.querySelector('td#d7');
-  s7.textContent=data.name;
+  let x1=document.querySelector('td#p1');
+  x1.textContent=data.coord.lon;
+  let x2=document.querySelector('td#p2');
+  x2.textContent=data.coord.lat;
+  let x3=document.querySelector('td#p3');
+  x3.textContent=data.weather[0].description;
+  let x4=document.querySelector('td#p4');
+  x4.textContent=data.main.temp_max;
+  let x5=document.querySelector('td#p5');
+  x5.textContent=data.main.temp_min;
+  let x6=document.querySelector('td#p6');
+  x6.textContent=data.wind.speed;
+  let x7=document.querySelector('td#p7');
+  x7.textContent=data.wind.deg;
+  let x8=document.querySelector('td#p8');
+  x8.textContent=data.name;
 
   if(typeof data === 'string'){
     data = JSON.parse(data);
