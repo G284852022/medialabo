@@ -44,6 +44,15 @@ p2.insertAdjacentElement('beforeend', 'hanako');
 
 
 // 練習4-4 箇条書き削除プログラム
-
+let l = document.querySelectorAll('li');
+for(let i of l){
+	i.remove();
+}
 
 // 練習4-5 箇条書き追加プログラム
+for(let n of data){
+	let ul2 = document.querySelector('ul');
+	let l2  = document.querySelector('li');
+	l2.textContent = n.name + '緯度' + n.lat + '経度' + n.lng;
+	ul2.insertAdjacentElement('beforeend', l2);
+}
